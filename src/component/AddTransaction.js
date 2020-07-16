@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import '../App.css';
+
 export const AddTransaction = () => {
     // Using useState() hook 
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
-    const Text = (props)=> {setText(props.target.value);};
-    const Amount = (props)=> {setAmount(props.target.value);};
+    const Text = (e)=> {setText(e.target.value);};
+    const Amount = (e)=> {setAmount(e.target.value);};
 
     return (
         <>
@@ -19,7 +19,7 @@ export const AddTransaction = () => {
                     <label htmlfor="amount">Amount(negative-expense, positive-amount)</label>
                     <input type="number" id="amount" value={amount}  onChange={Amount} placeholder="Enter Amount..."></input>
                 </div>
-                <button type="button" className="btn">Add Transaction</button>
+                <button type="button" className="btn" >Add Transaction</button>
             </form>
         </>
     )
